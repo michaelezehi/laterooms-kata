@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { array, func } from 'prop-types';
 
-import { FormGroup, Checkbox } from 'react-bootstrap';
+import { FormGroup, ControlLabel, Checkbox } from 'react-bootstrap';
 
 class HotelFilter extends Component {
 
@@ -62,6 +62,7 @@ class HotelFilter extends Component {
   render() {
     return (
       <FormGroup>
+        <ControlLabel>Filter:</ControlLabel><br />
         <Checkbox onChange={this.handleFilterChange.bind(this)} inputRef={ref => { this.carParkActive = ref; }} inline>Car Park</Checkbox>
         <Checkbox onChange={this.handleFilterChange.bind(this)} inputRef={ref => { this.poolActive = ref; }} inline>Pool</Checkbox>
         <Checkbox onChange={this.handleFilterChange.bind(this)} inputRef={ref => { this.gymActive = ref; }} inline>Gym</Checkbox>
