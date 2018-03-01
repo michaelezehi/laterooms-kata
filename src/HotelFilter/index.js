@@ -36,6 +36,7 @@ class HotelFilter extends Component {
     return filtersArr;
   }
 
+  // TODO - can probably refactor this to be a bit nicer
   handleFilterChange() {
     if (this.carParkActive.checked) {
       this.props.updateFilters(this.addFilter('car park'));

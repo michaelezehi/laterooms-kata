@@ -5,6 +5,7 @@ import HotelFilter from './index';
 
 import { HOTELS } from '../hotelData';
 
+// TODO - move to mocks
 const FILTERS = [];
 const HOTELLIST = HOTELS;
 
