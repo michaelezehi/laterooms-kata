@@ -5,6 +5,13 @@ exports[`renders without crashing 1`] = `
   className="form-group"
 >
   <label
+    className="control-label"
+    htmlFor={undefined}
+  >
+    Filter:
+  </label>
+  <br />
+  <label
     className="checkbox-inline"
     style={undefined}
     title=""

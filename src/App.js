@@ -3,6 +3,7 @@ import './App.css';
 
 import { HOTELS } from './hotelData';
 import HotelFilter from './HotelFilter/';
+import HotelSort from './HotelSort';
 import HotelList from './HotelList/';
 
 class App extends Component {
@@ -17,6 +18,24 @@ class App extends Component {
 
   updateFilters(val) {
     this.setState({ filters: val });
+  }
+
+  sortResults(sortQuery = 'StarRating|desc') {
+
+    const sortedResults = this.state.hotelList;
+    const sortVals = sortQuery.split('|');
+
+    sortedResults.sort((a, b) => {
+      if (sortVals[1] === 'asc') {
+        return a[sortVals[0]] - b[sortVals[0]];
+      }
+
+      if (sortVals[1] === 'desc') {
+        return b[sortVals[0]] - a[sortVals[0]];
+      }
+    });
+
+    this.setState({ hotelList: sortedResults });
   }
 
   filterResults() {
@@ -37,12 +56,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <HotelFilter
+        <HotelFilter
           filters={this.state.filters}
           updateFilters={this.updateFilters.bind(this)}
           filterResults={this.filterResults.bind(this)}
         />
-        <br /><br />
+        <HotelSort
+          sortResults={this.sortResults.bind(this)}
+        />
         <HotelList listHotels={this.state.hotelList} />
       </div>
     );

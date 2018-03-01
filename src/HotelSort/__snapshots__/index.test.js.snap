@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    className="control-label"
+    htmlFor="hotelSort"
+  >
+    Sort:
+  </label>
+  <select
+    className="form-control"
+    id="hotelSort"
+    onChange={[Function]}
+    type={undefined}
+  >
+    <option
+      value="StarRating|desc"
+    >
+      Star Rating Desc
+    </option>
+    <option
+      value="StarRating|asc"
+    >
+      Star Rating Asc
+    </option>
+  </select>
+</div>
+`;
