@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<ul
+  className="list-group"
+>
+  <li
+    className="list-group-item"
+  >
+    <h4
+      className="list-group-item-heading"
+    >
+      hotelone - 5 stars
+    </h4>
+    <p
+      className="list-group-item-text"
+    >
+      <span
+        className="label label-default"
+      >
+        car park
+      </span>
+       
+      <span
+        className="label label-default"
+      >
+        pool
+      </span>
+       
+    </p>
+  </li>
+  <li
+    className="list-group-item"
+  >
+    <h4
+      className="list-group-item-heading"
+    >
+      hoteltwo - 3 stars
+    </h4>
+    <p
+      className="list-group-item-text"
+    >
+      <span
+        className="label label-default"
+      >
+        car park
+      </span>
+       
+      <span
+        className="label label-default"
+      >
+        gym
+      </span>
+       
+    </p>
+  </li>
+  <li
+    className="list-group-item"
+  >
+    <h4
+      className="list-group-item-heading"
+    >
+      hotelthree - 3 stars
+    </h4>
+    <p
+      className="list-group-item-text"
+    />
+  </li>
+</ul>
+`;
