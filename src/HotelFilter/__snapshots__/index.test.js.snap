@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    className="checkbox-inline"
+    style={undefined}
+    title=""
+  >
+    <input
+      disabled={false}
+      onChange={[Function]}
+      type="checkbox"
+    />
+    Car Park
+  </label>
+  <label
+    className="checkbox-inline"
+    style={undefined}
+    title=""
+  >
+    <input
+      disabled={false}
+      onChange={[Function]}
+      type="checkbox"
+    />
+    Pool
+  </label>
+  <label
+    className="checkbox-inline"
+    style={undefined}
+    title=""
+  >
+    <input
+      disabled={false}
+      onChange={[Function]}
+      type="checkbox"
+    />
+    Gym
+  </label>
+</div>
+`;
