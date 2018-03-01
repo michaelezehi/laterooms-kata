@@ -11,8 +11,8 @@ class App extends Component {
     super();
 
     this.state = {
-      hotelList: HOTELS,
       filters: [],
+      sortQuery: 'StarRating|desc'
     }
   }
 
@@ -20,12 +20,15 @@ class App extends Component {
     this.setState({ filters: val });
   }
 
-  sortResults(sortQuery = 'StarRating|desc') {
+  updateSort(val) {
+    this.setState({ sortQuery: val });
+  }
 
-    const sortedResults = this.state.hotelList;
-    const sortVals = sortQuery.split('|');
+  sortResults(results) {
 
-    sortedResults.sort((a, b) => {
+    const sortVals = this.state.sortQuery.split('|');
+
+    results.sort((a, b) => {
       if (sortVals[1] === 'asc') {
         return a[sortVals[0]] - b[sortVals[0]];
       }
@@ -35,7 +38,7 @@ class App extends Component {
       }
     });
 
-    this.setState({ hotelList: sortedResults });
+    return results;
   }
 
   filterResults() {
@@ -50,21 +53,24 @@ class App extends Component {
       filteredResults = HOTELS;
     }
 
-    this.setState({ hotelList: filteredResults });
+    return filteredResults;
   }
 
   render() {
+
+    const filteredResults = this.filterResults();
+    const updatedResults = this.sortResults(filteredResults);
+
     return (
       <div className="App">
         <HotelFilter
           filters={this.state.filters}
           updateFilters={this.updateFilters.bind(this)}
-          filterResults={this.filterResults.bind(this)}
         />
         <HotelSort
-          sortResults={this.sortResults.bind(this)}
+          updateSort={this.updateSort.bind(this)}
         />
-        <HotelList listHotels={this.state.hotelList} />
+        <HotelList listHotels={updatedResults} />
       </div>
     );
   }

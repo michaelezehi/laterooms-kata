@@ -13,26 +13,11 @@ const updateFilters = (val) => {
   FILTERS = val;
 };
 
-const filterResults = () => {
-  let filteredResults = [];
-
-  if (FILTERS.length > 0) {
-    filteredResults = HOTELS.filter(h => {
-      return h.Facilities.some(v => (FILTERS.indexOf(v) >= 0 ));
-    });
-  } else {
-    filteredResults = HOTELS;
-  }
-
-  HOTELLIST = filteredResults;
-};
-
 it('renders without crashing', () => {
   const component = renderer.create(
     <HotelFilter
       filters={FILTERS}
       updateFilters={updateFilters}
-      filterResults={filterResults}
     />,
   );
   let tree = component.toJSON();
@@ -44,7 +29,6 @@ it('adds filter to filters arr', () => {
     <HotelFilter
       filters={FILTERS}
       updateFilters={updateFilters}
-      filterResults={filterResults}
     />,
   );
 
@@ -58,7 +42,6 @@ it('adds removes filter from filters arr', () => {
     <HotelFilter
       filters={FILTERS}
       updateFilters={updateFilters}
-      filterResults={filterResults}
     />,
   );
 

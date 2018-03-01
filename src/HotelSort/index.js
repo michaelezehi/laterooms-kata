@@ -6,11 +6,11 @@ import { FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
 class HotelSort extends Component {
 
   static propTypes = {
-    sortResults: func.isRequired,
+    updateSort: func.isRequired,
   }
 
   handleSort(e) {
-    this.props.sortResults(e.target.value);
+    this.props.updateSort(e.target.value);
   }
 
   render() {

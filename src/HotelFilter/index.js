@@ -8,7 +8,6 @@ class HotelFilter extends Component {
   static propTypes = {
     filters: array.isRequired,
     updateFilters: func.isRequired,
-    filterResults: func.isRequired,
   };
 
   addFilter(value) {
@@ -55,8 +54,6 @@ class HotelFilter extends Component {
     } else {
       this.props.updateFilters(this.removeFilter('gym'));
     }
-
-    this.props.filterResults();
   }
 
   render() {

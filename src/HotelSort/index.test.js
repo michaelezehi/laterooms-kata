@@ -6,26 +6,16 @@ import HotelSort from './index';
 import { HOTELS } from '../hotelData.js';
 
 // TODO - move into mocks
-const sortResults = (sortQuery = 'StarRating|desc') => {
-  const sortedResults = HOTELS;
-  const sortVals = sortQuery.split('|');
 
-  sortedResults.sort((a, b) => {
-    if (sortVals[1] === 'asc') {
-      return a[sortVals[0]] - b[sortVals[0]];
-    }
+let SORTQUERY = 'StarRating|desc';
 
-    if (sortVals[1] === 'desc') {
-      return b[sortVals[0]] - a[sortVals[0]];
-    }
-  });
-
-  return sortedResults;
+const updateSort = (val) => {
+  SORTQUERY = val;
 };
 
 it('renders without crashing', () => {
   const component = renderer.create(
-    <HotelSort sortResults={sortResults} />,
+    <HotelSort updateSort={updateSort} />,
   );
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -33,7 +23,7 @@ it('renders without crashing', () => {
 
 it('sorts results', () => {
   const component = shallow(
-    <HotelSort sortResults={sortResults} />,
+    <HotelSort updateSort={updateSort} />,
   );
 
   expect(HOTELS[0].Name).toBe('hotelone');
